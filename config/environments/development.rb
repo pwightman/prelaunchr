@@ -44,4 +44,5 @@ Prelaunchr::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { :host => "http://pink-moustache-185478.nitrousapp.com:3000" }
+  config.action_mailer.asset_host = config.action_mailer.default_url_options[:host]
 end

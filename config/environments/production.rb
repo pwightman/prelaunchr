@@ -61,6 +61,7 @@ Prelaunchr::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = { :host => "http://mybody-llc.herokuapp.com" }
+  config.action_mailer.asset_host = config.action_mailer.default_url_options[:host]
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
