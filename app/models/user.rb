@@ -16,31 +16,31 @@ class User < ActiveRecord::Base
   REFERRAL_STEPS = [
     {
       'count' => 5,
-      'html' => 'Shave<br>Cream',
+      'html' => 'Probiotic Instant Resurfacing Pads Travel Pack',
       'class' => 'two',
       'image' =>  ActionController::Base.helpers.asset_path(
-        'refer/cream-tooltip@2x.png')
+        'glowbiotics/resurfacing-pads-pack.jpg')
     },
     {
-      'count' => 10,
-      'html' => 'Truman Handle<br>w/ Blade',
+      'count' => 15,
+      'html' => 'Probiotic HydraGlow Cream Oil',
       'class' => 'three',
       'image' => ActionController::Base.helpers.asset_path(
-        'refer/truman@2x.png')
+        'glowbiotics/hydraglow-oil.jpg')
     },
     {
-      'count' => 25,
-      'html' => 'Winston<br>Shave Set',
+      'count' => 30,
+      'html' => 'Anti-Wrinkle Illuminating Eye Cream',
       'class' => 'four',
       'image' => ActionController::Base.helpers.asset_path(
-        'refer/winston@2x.png')
+        'glowbiotics/anti-wrinkle-eye-cream.jpg')
     },
     {
-      'count' => 50,
-      'html' => 'One Year<br>Free Blades',
+      'count' => 55,
+      'html' => 'Retinol Anti-Aging + Brightening Treatment',
       'class' => 'five',
       'image' => ActionController::Base.helpers.asset_path(
-        'refer/blade-explain@2x.png')
+        'glowbiotics/retinol.jpg')
     }
   ]
 

@@ -1,3 +1,19 @@
+mybody specific info:
+=====================
+
+The Rails services are started from the command line. If there isn't already a command prompt at the bottom
+of your screen, click the plus button in the bottom-left corner of the screen and one will pop up.
+
+To start up all the services, run the following in terminal:
+
+cd ~/code/prelaunchr ; foreman start -f Procfile.dev web
+
+If the box ever gets into a weird state, just head back to the nitrous dashboard and restart the box (screenshot: http://d.pr/i/1dtKD)
+Then re-run the foreman command up above. There appears to be a subtle memory leak (I'll look into it), so it might be wise to start up
+and shut down the services each time you work. Services can be shut down with ctrl+c.
+
+See this PDF for more instructions on where to find files, etc.: http://d.pr/f/1kpMb
+
 Prelaunchr
 ==========
 

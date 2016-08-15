@@ -1,6 +1,6 @@
-<div class="key"></div>
-<p class="byline brandon">Be the first to know</p>
+<div class="form-glow-symbol"><img src="<%= image_url("glowbiotics/glowbiotics-symbol.png") %>" /></div>
+<p class="byline brandon">Be the first in the GLOW</p>
 <%= form_for @user, :url => { :action => "create" } do |f| %>
   <%= f.text_field :email, :placeholder => "Enter Email", :class => "email brandon" %>
-  <input class="submit brandon" name="commit" type="submit" value="Step Inside" />
+  <input class="submit brandon" name="commit" type="submit" value="STEP INSIDE" />
 <% end %>

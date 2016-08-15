@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_filter :skip_first_page, only: :new
   before_filter :handle_ip, only: :create
 
+  def letsencrypt
+    render text: "H81eunrkgt4PqntpgCsA73AlcJBVEj4joFNl1aRd4C0.ld0BC5cq7FiAwxvkGqSNosssUH2JbauBknthOpjNOi0"
+  end
+
   def new
     @bodyId = 'home'
     @is_mobile = mobile_device?
@@ -17,9 +21,19 @@ class UsersController < ApplicationController
     ref_code = cookies[:h_ref]
     email = params[:user][:email]
     @user = User.new(email: email)
-    @user.referrer = User.find_by_referral_code(ref_code) if ref_code
+    referrer =  if ref_code then User.find_by_referral_code(ref_code) else nil end
+    @user.referrer = referrer
 
     if @user.save
+
+      if referrer
+        count = referrer.referrals.count
+        milestone = User::REFERRAL_STEPS.find { |s| s['count'] == count }
+        if milestone
+          UserMailer.delay.milestone_email(referrer, milestone)
+        end
+      end
+
       cookies[:h_email] = { value: @user.email }
       redirect_to '/refer-a-friend'
     else
@@ -50,6 +64,12 @@ class UsersController < ApplicationController
     redirect_to root_path, status: 404
   end
 
+  # TODO: Remove before going to production
+  def create_bogus_user
+    User.create({ email: "#{SecureRandom.uuid}@#{SecureRandom.uuid}.com" })
+    render plain: "OK"
+  end
+
   private
 
   def skip_first_page
@@ -73,14 +93,14 @@ class UsersController < ApplicationController
 
     current_ip = IpAddress.find_by_address(address)
     if current_ip.nil?
-      current_ip = IpAddress.create(address: address, count: 1)
+#       current_ip = IpAddress.create(address: address, count: 1)
     elsif current_ip.count > 2
       logger.info('IP address has already appeared three times in our records.
                  Redirecting user back to landing page.')
-      return redirect_to root_path
+#       return redirect_to root_path
     else
-      current_ip.count += 1
-      current_ip.save
+#       current_ip.count += 1
+#       current_ip.save
     end
   end
 end
