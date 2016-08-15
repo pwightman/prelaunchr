@@ -2,10 +2,6 @@ class UsersController < ApplicationController
   before_filter :skip_first_page, only: :new
   before_filter :handle_ip, only: :create
 
-  def letsencrypt
-    render text: "H81eunrkgt4PqntpgCsA73AlcJBVEj4joFNl1aRd4C0.ld0BC5cq7FiAwxvkGqSNosssUH2JbauBknthOpjNOi0"
-  end
-
   def new
     @bodyId = 'home'
     @is_mobile = mobile_device?

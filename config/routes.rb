@@ -11,8 +11,6 @@ Prelaunchr::Application.routes.draw do
   get 'privacy-policy' => 'users#policy'
   get 'create-bogus-user' => 'users#create_bogus_user'
 
-  get '.well-known/acme-challenge/:id' => "users#letsencrypt"
-
   unless Rails.application.config.consider_all_requests_local
     get '*not_found', to: 'users#redirect', :format => false
   end
