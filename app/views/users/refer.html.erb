@@ -1,3 +1,6 @@
+<% if flash[:success] %>
+  <div class="flash-success brandon"><%= flash[:success] %></div>
+<% end %>
 <div class="page-content">
   <div class="content-shell brandon">
     <img src="<%= image_url("glowbiotics/glowbiotics-teaser-reward.jpg") %>" />

@@ -4,6 +4,7 @@ class UserMailer < ActionMailer::Base
   def signup_email(user)
     @user = user
     @twitter_message = "#Shaving is evolving. Excited for @harrys to launch."
+    @host = Rails.application.config.action_mailer.default_url_options[:host]
 
     mail(:to => user.email, :subject => "Thanks for signing up!")
   end
@@ -12,6 +13,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @referral = referral
     @twitter_message = "#Shaving is evolving. Excited for @harrys to launch."
+    @host = Rails.application.config.action_mailer.default_url_options[:host]
 
     mail(:to => user.email, :subject => "You've reached a milestone!")
   end
