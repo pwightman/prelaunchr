@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         count = referrer.referrals.count
         milestone = User::REFERRAL_STEPS.find { |s| s['count'] == count }
         if milestone
-          UserMailer.delay.milestone_email(referrer, milestone)
+          referrer.send_milestone_email(milestone)
         end
       end
 
@@ -53,7 +53,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def unsubscribe
+    id = params[:id]
+
+    user = User.find_by(unique_id: id)
+    if user
+      user.subscribed = false
+      user.save
+      redirect_to "/", flash: { success: "Successfully unsubscribed." }
+    else
+      redirect_to "/"
+    end
+  end
+
   def policy
+  end
+
+  def rules
   end
 
   def redirect

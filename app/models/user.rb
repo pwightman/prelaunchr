@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :referral_code, uniqueness: true
 
   before_create :create_referral_code
+  before_create :initialize_attributes
   after_create :send_welcome_email
 
   REFERRAL_STEPS = [
@@ -44,13 +45,26 @@ class User < ActiveRecord::Base
     }
   ]
 
+  def send_milstone_email milestone
+    if subscribed
+      UserMailer.delay.milestone_email(self, milestone)
+    end
+  end
+
   private
+
+  def initialize_attributes
+    self.subscribed ||= true
+  end
 
   def create_referral_code
     self.referral_code = UsersHelper.unused_referral_code
+    self.unique_id = UsersHelper.unused_unique_id
   end
 
   def send_welcome_email
-    UserMailer.delay.signup_email(self)
+    if subscribed
+      UserMailer.delay.signup_email(self)
+    end
   end
 end
