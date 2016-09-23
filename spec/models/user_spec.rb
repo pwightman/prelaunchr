@@ -24,11 +24,39 @@ RSpec.describe User, type: :model do
   end
 
   it 'should send a welcome email on save' do
+    count = Delayed::Job.count
     user = User.new(email: 'user@example.com')
     user.run_callbacks(:create)
     expect(user).to receive(:send_welcome_email)
+    expect(Delayed::Job.count).to equal(count + 1)
     user.save!
   end
+
+  it 'should queue milestone email if subscribed' do
+    user = User.create!(email: 'user@example.com')
+    count = Delayed::Job.count
+    user.send_milestone_email User::REFERRAL_STEPS.first
+    expect(Delayed::Job.count).to equal(count + 1)
+    user.save!
+  end
+
+  it 'should not queue welcome email on save if not subscribed' do
+    count = Delayed::Job.count
+    user = User.new(email: 'user@example.com', subscribed: false)
+    user.run_callbacks(:create)
+    expect(user).to receive(:send_welcome_email)
+    expect(Delayed::Job.count).to equal(count)
+    user.save!
+  end
+
+  it 'should not queue milestone email on save if not subscribed' do
+    count = Delayed::Job.count
+    user = User.create!(email: 'user@example.com', subscribed: false)
+    user.send_milestone_email User::REFERRAL_STEPS.first
+    expect(Delayed::Job.count).to equal(count)
+    user.save!
+  end
+
 end
 
 RSpec.describe UsersHelper do

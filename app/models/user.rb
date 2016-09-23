@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
     }
   ]
 
-  def send_milstone_email milestone
+  def send_milestone_email milestone
     if subscribed
       UserMailer.delay.milestone_email(self, milestone)
     end
@@ -54,7 +54,9 @@ class User < ActiveRecord::Base
   private
 
   def initialize_attributes
-    self.subscribed ||= true
+    if self.subscribed.nil?
+      self.subscribed = true
+    end
   end
 
   def create_referral_code
