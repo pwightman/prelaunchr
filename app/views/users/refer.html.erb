@@ -4,15 +4,16 @@
 <div class="page-content">
   <div class="content-shell brandon">
     <img src="<%= image_url("glowbiotics/glowbiotics-teaser-reward.jpg") %>" />
-    <h2>Now share this exciting news with your friends!</h2>
+    <h2>Don't leave your friends in the dark!</h2>
     <p>Invite your friends to experience GLOWBIOTICS, a complete line of revolutionary skincare formulas that utilize topical probiotics, one of the industry’s biggest beauty breakthroughs, to help every woman achieve healthy, radiant skin! We’re pretty confident that this product line will be your new skincare “friend with benefits!”</p>
+    <h2>Share this glowing news!</h2>
     <p>Share your unique link via email, Facebook or Twitter to earn free GLOWBIOTICS Product when friends sign up!</p>
 
     <div class="glowbiotics-email-link-box"><%= root_url %>?ref=<%= @user.referral_code %></div>
     <% twitter_message = "#Get Glowing! Excited for @glowbiotics to launch." %>
     <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" target="_blank"><img src="<%= image_url("glowbiotics/twitter.png") %>" /></a>
 
-    <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" target="_blank"><img src="<%= image_url("glowbiotics/facebook.png") %>" /></a>
+    <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Glowbiotics" target="_blank"><img src="<%= image_url("glowbiotics/facebook.png") %>" /></a>
   </div>
 </div>
 
@@ -73,6 +74,6 @@
     <p class="check brandon">Keep checking</p>
 
     <p class="ship brandon">We only ship in the United States.</p>
-    <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
+    <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a> | <a class="policy brandon" href="/rules" target="_blank">Offical Rules</a>
   </div>
 </div>
