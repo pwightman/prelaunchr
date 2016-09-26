@@ -2,16 +2,18 @@
   <div class="flash-success brandon"><%= flash[:success] %></div>
 <% end %>
 <div class="content-shell"><img src="<%= image_url("glowbiotics/glowbiotics-teaser-landing.jpg") %>" /></div>
-<div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
+
+
+
+<div class="content-shell <%= "ended" if Rails.application.config.ended %>">
   <% if Rails.application.config.ended %>
-    <%= render "users/campaign_ended" %>
+      <%= render "users/campaign_ended" %>
   <% else %>
-    <%= render "users/campaign_ongoing" %>
+      <%= render "users/campaign_ongoing" %>
   <% end %>
 
 
-
-
 </div>
+
 
 <div id="form-wrap clearfix::after"> test10 </div>
