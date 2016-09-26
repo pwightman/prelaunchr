@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
       'html' => 'Probiotic Instant Resurfacing Pads Travel Pack',
       'class' => 'two',
       'image' =>  ActionController::Base.helpers.asset_path(
-        '/images/glowbiotics/resurfacing-pads-pack.jpg')
+        'images/glowbiotics/resurfacing-pads-pack.jpg')
     },
     {
       'count' => 15,
