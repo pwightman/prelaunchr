@@ -40,8 +40,7 @@ class User < ActiveRecord::Base
       'count' => 55,
       'html' => 'Retinol Anti-Aging + Brightening Treatment',
       'class' => 'five',
-      'image' => ActionController::Base.helpers.asset_path(
-        'glowbiotics/retinol.jpg')
+      'image' => 'https://www.glowbioticsmd.com/media/wysiwyg/prelauncher/retinol.jpg'
     }
   ]
 
