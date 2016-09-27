@@ -19,25 +19,25 @@ class User < ActiveRecord::Base
       'count' => 5,
       'html' => 'Probiotic Instant Resurfacing Pads Travel Pack',
       'class' => 'two',
-      'image' => 'glowbiotics/resurfacing-pads-pack.jpg'
+      'image' => 'https://www.glowbioticsmd.com/media/wysiwyg/prelauncher/resurfacing-pads-pack.jpg'
     },
     {
       'count' => 15,
       'html' => 'Probiotic HydraGlow Cream Oil',
       'class' => 'three',
-      'image' => 'glowbiotics/hydraglow-oil.jpg'
+      'image' => 'https://www.glowbioticsmd.com/media/wysiwyg/prelauncher/hydraglow-oil.jpg'
     },
     {
       'count' => 30,
       'html' => 'Anti-Wrinkle Illuminating Eye Cream',
       'class' => 'four',
-      'image' => 'glowbiotics/anti-wrinkle-eye-cream.jpg'
+      'image' => 'https://www.glowbioticsmd.com/media/wysiwyg/prelauncher/anti-wrinkle-eye-cream.jpg'
     },
     {
       'count' => 55,
       'html' => 'Retinol Anti-Aging + Brightening Treatment',
       'class' => 'five',
-      'image' => 'glowbiotics/retinol.jpg'
+      'image' => 'https://www.glowbioticsmd.com/media/wysiwyg/prelauncher/retinol.jpg'
     }
   ]
 

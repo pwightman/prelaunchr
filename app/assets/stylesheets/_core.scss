@@ -66,7 +66,7 @@ html.home{
 }
 
 #home .form-wrap{
-	height: 80px;
+//	height: 80px;
 	width: 411px;
 	margin: 23px auto 0;
 }
@@ -682,6 +682,7 @@ only screen and (min-device-pixel-ratio: 2) {
 .content-shell h1 {font-size: 25px;}
 .content-shell h2 {font-size: 21px;}
 .content-shell p {margin-bottom: 20px;}
+.content-shell a {color:#be679d;}
 .flash-success {text-align: center; background-color: #a95082; padding-top: 10px; padding-bottom: 10px; color: white;}
 .form-glow-symbol {width: 100%; text-align:center; margin: 0 0 0 0;}
 .glowbiotics-email-link-box {border: 5px solid #8e416e; padding: 20px; width: 50%; margin: 20px auto 20px auto;}
@@ -691,10 +692,9 @@ only screen and (min-device-pixel-ratio: 2) {
 #refer .prizes .products li.product.selected p {color: #993366 !important;}
 #refer .prizes .products li.product.selected .circle {background: #993366 none repeat scroll 0 0 !important; border-color: #993366 !important; color: #fff !important;}
 
+#footer {float:left; text-align: center; margin: 50px auto 0 auto; display:block;}
 
-
-
-
+.page-privacy h2 {text-transform: capitalize;}
 
 
 
