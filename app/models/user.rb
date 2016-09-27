@@ -19,29 +19,25 @@ class User < ActiveRecord::Base
       'count' => 5,
       'html' => 'Probiotic Instant Resurfacing Pads Travel Pack',
       'class' => 'two',
-      'image' =>  ActionController::Base.helpers.asset_path(
-        'glowbiotics/resurfacing-pads-pack.jpg')
+      'image' => 'glowbiotics/resurfacing-pads-pack.jpg'
     },
     {
       'count' => 15,
       'html' => 'Probiotic HydraGlow Cream Oil',
       'class' => 'three',
-      'image' => ActionController::Base.helpers.asset_path(
-        'glowbiotics/hydraglow-oil.jpg')
+      'image' => 'glowbiotics/hydraglow-oil.jpg'
     },
     {
       'count' => 30,
       'html' => 'Anti-Wrinkle Illuminating Eye Cream',
       'class' => 'four',
-      'image' => ActionController::Base.helpers.asset_path(
-        'glowbiotics/anti-wrinkle-eye-cream.jpg')
+      'image' => 'glowbiotics/anti-wrinkle-eye-cream.jpg'
     },
     {
       'count' => 55,
       'html' => 'Retinol Anti-Aging + Brightening Treatment',
       'class' => 'five',
-      'image' => ActionController::Base.helpers.asset_path(
-        'glowbiotics/retinol.jpg')
+      'image' => 'glowbiotics/retinol.jpg'
     }
   ]
 
