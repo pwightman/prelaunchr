@@ -88,7 +88,7 @@ class UsersController < ApplicationController
     return if Rails.application.config.ended
 
     email = cookies[:h_email]
-    if email && User.find_by_email(email)
+    if email #&& User.find_by_email(email)
       flash.keep
       redirect_to '/refer-a-friend'
     else
