@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
       'html' => 'Probiotic HydraGlow Cream Oil',
       'class' => 'three',
       'image' => ActionController::Base.helpers.asset_path(
-        'assets/images/glowbiotics/hydraglow-oil.jpg')
+        'assets/glowbiotics/hydraglow-oil.jpg')
     },
     {
       'count' => 30,
